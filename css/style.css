@@ -1,15 +1,28 @@
-/* generics */
+/*** GENERICS ***/
 
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  margin: 0px;
-  padding: 0px;
 }
 
 body {
   font-family: sans-serif;
+  font-size: 18px;
+  line-height: 1.2rem;
 }
 
-/* utilities */
+img {
+  width: 100%;
+}
 
-/* content */
+
+/*** UTILITIES ***/
+
+
+
+/*** CONTENT ***/
+
+.none {
+  display: none;
+}
