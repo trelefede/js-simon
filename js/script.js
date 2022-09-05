@@ -35,11 +35,13 @@ let timerPrompt = setTimeout(function () {
     // ciclo for per chiedere all'utente un numero alla volta
     for (let i = 0; i < arrayNum.length; i++) {
         let userNum = parseInt(prompt('Inserisci il numero'));
+        while (isNaN(userNum)) {
+            alert('NON HAI INSERITO UN NUMERO');
+            userNum = parseInt(prompt('Inserisci il numero'));
+        }
         // inserisco uno alla volta i numeri scelti nell'array utente
         userArrayNum.push(userNum);
     }
-
-    console.log(userArrayNum);
 
     // inizializzo due variabili da usare per il confronto e da stampare alla fine
     let correctNumbers = 0;
@@ -53,10 +55,6 @@ let timerPrompt = setTimeout(function () {
             userCorrectNumbers.push(userArrayNum[i]);
         }
     }
-
-    // stampo i valori finali 
-    console.log('numeri azzeccati', correctNumbers);
-    console.log('lista numeri', userCorrectNumbers);
 
     const result = document.querySelector(".result");
     result.innerHTML = "<p>Numeri da memorizzare</p>" + arrayNum + "<p>Numeri inseriti dall\'utente</p>" + userArrayNum + "<p>Hai azzeccato</p>" + correctNumbers + " numeri" + "<p>I numeri azzeccati sono</p>" + userCorrectNumbers;
