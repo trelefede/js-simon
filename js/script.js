@@ -9,6 +9,9 @@ console.log('JS OK!');
 const arrayNum = [];
 let userArrayNum = [];
 
+prompt('Hai 5 secondi per memorizzare più numeri possibili')
+
+// ciclo for per creare 5 numeri random
 for (let i = 0; i < 5; i++) {
     let number = Math.floor(Math.random() * 100);
     arrayNum.push(number);
@@ -16,33 +19,46 @@ for (let i = 0; i < 5; i++) {
 
 console.log(arrayNum);
 
+// leggo div html e scrivo al suo interno l'array di numeri
 const numbers = document.querySelector(".numbers");
 numbers.innerHTML = arrayNum;
 
+// faccio partire conto alla rovescia per dare al div la classe none
 let timerNone = setTimeout(function () {
     numbers.classList.add("none");
 }, 5 * 1000);
 
+// timer per aspettare che finisca il conto alla rovescia prima di proseguire con le richieste all'utente
 let timerPrompt = setTimeout(function () {
     alert('Inserisci uno alla volta i numeri precedentemente mostrati');
+
+    // ciclo for per chiedere all'utente un numero alla volta
     for (let i = 0; i < arrayNum.length; i++) {
         let userNum = parseInt(prompt('Inserisci il numero'));
+        // inserisco uno alla volta i numeri scelti nell'array utente
         userArrayNum.push(userNum);
     }
 
     console.log(userArrayNum);
 
-    for (i = 0; i < userArrayNum; i++) {
+    // inizializzo due variabili da usare per il confronto e da stampare alla fine
+    let correctNumbers = 0;
+    let userCorrectNumbers = [];
+
+    // ciclo for per verificare se i numeri inseriti dall'utente sono presenti nell'array iniziale
+    for (i = 0; i < userArrayNum.length; i++) {
+        // se sono presenti incremento la variabile ad ogni ciclo e aggiungo il valore all'array userCorrectNumbers
         if (arrayNum.includes(userArrayNum[i])) {
-            index++;
-            console.log(i);
-            correctNumber += " " + i
+            correctNumbers++;
+            userCorrectNumbers.push(userArrayNum[i]);
         }
     }
-}, 6 * 1000);
 
-let index = 0;
-let correctNumber;
+    // stampo i valori finali 
+    console.log('numeri azzeccati', correctNumbers);
+    console.log('lista numeri', userCorrectNumbers);
+
+}, 6 * 1000);
 
 
 
