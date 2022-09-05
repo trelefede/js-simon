@@ -9,7 +9,7 @@ console.log('JS OK!');
 const arrayNum = [];
 let userArrayNum = [];
 
-prompt('Hai 5 secondi per memorizzare più numeri possibili')
+alert('Hai 5 secondi per memorizzare più numeri possibili')
 
 // ciclo for per creare 5 numeri random
 for (let i = 0; i < 5; i++) {
@@ -57,6 +57,9 @@ let timerPrompt = setTimeout(function () {
     // stampo i valori finali 
     console.log('numeri azzeccati', correctNumbers);
     console.log('lista numeri', userCorrectNumbers);
+
+    const result = document.querySelector(".result");
+    result.innerHTML = "<p>Numeri da memorizzare</p>" + arrayNum + "<p>Numeri inseriti dall\'utente</p>" + userArrayNum + "<p>Hai azzeccato</p>" + correctNumbers + " numeri" + "<p>I numeri azzeccati sono</p>" + userCorrectNumbers;
 
 }, 6 * 1000);
 
