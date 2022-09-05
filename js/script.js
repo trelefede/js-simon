@@ -21,7 +21,7 @@ console.log(arrayNum);
 
 // leggo div html e scrivo al suo interno l'array di numeri
 const numbers = document.querySelector(".numbers");
-numbers.innerHTML = arrayNum;
+numbers.innerHTML = "<p>Numeri da memorizzare</p>" + arrayNum;
 
 // faccio partire conto alla rovescia per dare al div la classe none
 let timerNone = setTimeout(function () {
@@ -57,7 +57,7 @@ let timerPrompt = setTimeout(function () {
     }
 
     const result = document.querySelector(".result");
-    result.innerHTML = "<p>Numeri da memorizzare</p>" + arrayNum + "<p>Numeri inseriti dall\'utente</p>" + userArrayNum + "<p>Hai azzeccato</p>" + correctNumbers + " numeri" + "<p>I numeri azzeccati sono</p>" + userCorrectNumbers;
+    result.innerHTML = "<p>Numeri da memorizzare</p>" + arrayNum + "<p>Numeri inseriti dall\'utente</p>" + userArrayNum + "<p>Hai azzeccato</p>" + correctNumbers + " numero/i" + "<p>I/l numero/i azzeccati sono</p>" + userCorrectNumbers;
 
 }, 6 * 1000);
 
